@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Siege Account Switcher</title>
+        <link href="./css/main.css" rel="stylesheet" type="text/css" />
+        <script src="js/main.js"></script>
+    </head>
+    <body>
+        <div class="outer-button-div">
+            <div class="top-information">
+                <h1 class="text">Siege Account Switcher<br><h4 class="text">By SonicMastr</h4></h1>
+                <h6 class="text">User Info Powered By R6TAB</h6>
+            </div>
+            <div class="button-div">
+                <div class="button-list-div">
+                    <button class="buttons text steam">Steam</button>
+                </div>
+                <div class="user-info">
+                    <div class="avatar">
+                        
+                    </div>
+                    <div class="info">
+
+                    </div>
+                </div>
+                <div class="button-list-div dropdown">
+                    <button onclick="myFunction()" class="buttons text uplay dropbtn">Uplay</button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            const electron = require('electron');
+            const {ipcRenderer} = electron;
+        </script>
+    </body>
+</html>

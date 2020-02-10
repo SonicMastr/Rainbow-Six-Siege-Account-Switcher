@@ -1,0 +1,24 @@
+{
+  "name": "rainbow-six-siege-account-switcher",
+  "version": "1.0.0",
+  "description": "A Simple Account Switcher for Tom Clancy's Rainbow Six Siege",
+  "main": "main.js",
+  "dependencies": {
+    "electron": "^8.0.0",
+    "electron-json-storage": "^4.1.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SonicMastr/Rainbow-Six-Siege-Account-Switcher.git"
+  },
+  "author": "SonicMastr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SonicMastr/Rainbow-Six-Siege-Account-Switcher/issues"
+  },
+  "homepage": "https://github.com/SonicMastr/Rainbow-Six-Siege-Account-Switcher#readme"
+}
