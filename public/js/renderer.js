@@ -1,10 +1,10 @@
-
 const electron = require('electron')
 const ipc = electron.ipcRenderer
 const dropdown = document.getElementById('myDropdown')
 const avatarDiv = document.getElementById('avatar-img')
 const name = document.getElementById('userName')
 const level = document.getElementById('userLevel')
+const userinfo = document.getElementById('user-info')
 window.addEventListener('load', () => {
   loadUsers()
   document.getElementById('uplay-button').addEventListener('click', toggleDropdown)
@@ -33,18 +33,21 @@ function openFileBrowser () {
   console.log('ran')
 }
 
-function showUserInfo (event) {
+function renderUserInfo (event) {
+  userinfo.classList.remove('fade-in-bottom')
+  void userinfo.offsetWidth
   const avatar = event.target.getAttribute('avatar')
   const userLevel = event.target.getAttribute('userLevel')
   const userName = event.target.innerHTML
   avatarDiv.src = avatar
   level.innerHTML = 'Level ' + userLevel
   name.innerHTML = userName
+  userinfo.classList.add('fade-in-bottom')
 }
 
 window.onclick = function (event) {
   if (event.target.matches('.user')) {
-    showUserInfo(event)
+    renderUserInfo(event)
   } else if (!event.target.matches('.dropbtn')) {
     var dropdowns = document.getElementsByClassName('dropdown-content')
     var i

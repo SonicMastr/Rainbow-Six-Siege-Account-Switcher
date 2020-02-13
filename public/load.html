@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Siege Account Switcher</title>
+        <link href="./css/main.css" rel="stylesheet" type="text/css" />
+        <link href="./css/animations.css" rel="stylesheet" type="text/css" />
+        <link href="./css/load.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+                <div class="loading-box fade-in-bottom">
+                    <h1 class="text">Siege Account Switcher</h1>
+                    <h4 class="text">By SonicMastr</h4>
+                    <div class="loading-imgs">
+                        <img src="./img/Siege_Logo_Blue.png" class="loading-img logo">
+                        <img src="./img/Semi_Circle.png" class="loading-img loading rotate" />
+                    </div>
+                    <h6 id="status" class="text status"></h6>
+                </div>
+        <script>
+            const electron = require('electron')
+            const ipc = electron.ipcRenderer
+            ipc.on('update', (event, info) => {
+                document.getElementById('status').innerHTML = info
+            })
+        </script>
+    </body>
+</html>

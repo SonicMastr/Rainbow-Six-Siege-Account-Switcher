@@ -1,5 +1,5 @@
-
 body {
+  user-select: none;
   background-color: #1E1D20;
   height: 100vh;
   width: 100vw;
@@ -90,7 +90,9 @@ body {
   }
 
   /* Dropdown button on hover & focus */
-.buttons:hover, .buttons:focus {
+  .buttons:hover, .uplay:focus {
+    background-color: rgb(76, 126, 170);
+    cursor: pointer;
   }
   /* Remove Button hover */
   .buttons:not(:hover) {

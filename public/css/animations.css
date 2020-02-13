@@ -1,0 +1,7 @@
+.fade-in-bottom{animation:fade-in-bottom .5s cubic-bezier(.39,.575,.565,1.000) both}
+
+@keyframes fade-in-bottom{0%{transform:translateY(50px);opacity:0}100%{transform:translateY(0);opacity:1}}
+
+.rotate{animation:rotate-center 1.5s linear infinite both} 
+
+@keyframes rotate-center{0%{transform:rotate(0)translate(-50%, -50%);transform-origin: 0% 0%;}100%{transform: rotate(360deg) translate(-50%, -50%);transform-origin: 0% 0%;}}

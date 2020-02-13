@@ -1,0 +1,55 @@
+.loading-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 70%;
+    padding-top: 10%;
+}
+
+h1, h4, h6 {
+    display: flex;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 7vw;
+}
+
+h2 {
+    font-size: 5vw;
+}
+h6 {
+    margin-top: 20%;
+    margin-bottom: -10%;
+    height: 100%;
+    font-size: 4vw;
+}
+
+.loading-imgs {
+    position: relative;
+    padding-top: 25%;
+    height: 50%;
+    width: 50%;
+}
+
+.loading-img {
+    position: absolute;
+    display: block;
+}
+
+.logo {
+    height:70%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+.loading {
+    height: 100%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}

@@ -1,10 +1,3 @@
-const electron = require('electron')
-const storage = require('electron-json-storage')
-const userInfo = new (require('./userInfo'))(storage)
-const settings = new (require('./settings'))(storage)
-const cmd = new (require('./cmd'))()
-const dialog = electron.dialog
-
 class IPCMain {
   constructor (electron, userInfo, settings) {
     this.ipc = electron.ipcMain
@@ -24,7 +17,7 @@ class IPCMain {
       const directory = await this.dialog.showOpenDialogSync({ title: 'Please Select Siege Install Directory', properties: ['openDirectory'] })
       console.log(directory)
       if (directory) {
-        const saved = await settings.set({ setup: settings.setup, installDirectory: directory })
+        const saved = await this.settings.set({ setup: this.settings.setup, installDirectory: directory })
         if (saved === 0) {
           console.log('Saved Install Directory')
           event.returnValue = 'Saved Install Directory'
