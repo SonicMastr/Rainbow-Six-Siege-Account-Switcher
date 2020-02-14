@@ -2,13 +2,15 @@ class Settings {
   constructor (storage) {
     this.setup = ''
     this.installDirectory = ''
+    this.steam = false
     this.storage = storage
   }
 
   get () {
     return {
       setup: this.setup,
-      installDirectory: this.installDirectory
+      installDirectory: this.installDirectory,
+      steam: this.steam
     }
   }
 
@@ -20,6 +22,7 @@ class Settings {
         console.log('Updated Settings')
         this.setup = settings.setup
         this.installDirectory = settings.installDirectory
+        this.steam = settings.steam
         resolve(0)
       })
     })
@@ -31,7 +34,7 @@ class Settings {
         if (e) reject(e)
 
         if (!Object.keys(d).length) {
-          this.storage.set('settings', { setup: 0, installDirectory: '' }, (e) => {
+          this.storage.set('settings', { setup: 0, installDirectory: '', steam: false }, (e) => {
             if (e) reject(e)
 
             console.log('Updated Settings')
@@ -42,8 +45,10 @@ class Settings {
 
           this.setup = d.setup
           this.installDirectory = d.installDirectory
+          this.steam = d.steam
           console.log(this.setup)
           console.log(this.installDirectory)
+          console.log(this.steam)
           resolve(0)
         })
       })

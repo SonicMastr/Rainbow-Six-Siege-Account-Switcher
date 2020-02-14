@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Siege Account Switcher</title>
+        <link href="./css/main.css" rel="stylesheet" type="text/css" />
+        <link href="./css/animations.css" rel="stylesheet" type="text/css" />
+        <link href="./css/tutorial.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <div id="1" class="tutorial-container show">
+            <div class="text-container fade-in one">
+                <h2 class="title">Welcome to Siege Account Switcher</h3>
+                <p class="text tutorial-text">This program allows users of both the Steam and Uplay Versions of Rainbow Six Siege to seamlessly switch between both accounts without having to install the game twice. This gives players the ability to save 70-100GB of storage that is occupied by a second installation.<br><br><br><br><br>To start installation to make account switching a two-click process, click next.<br><br><br>If you just want to switch between Uplay accounts, <br>click the Uplay Only button</p>
+            </div>
+            <div class="image-control-container">
+                <div class="preview-image fade-in">
+                    <img src="img/tutorial/Rainbow_Six_Siege_28.jpg" />
+                </div>
+                <div class="navigation">
+                    <button id="uplay-only" class="buttons uplay-only pulsate-bck">Uplay Only</button>
+                    <button id="next" class="buttons next">Next</button>
+                </div>
+            </div>
+        </div>
+        <div id="2"class="tutorial-container">
+            <div class="text-container fade-in two">
+                <h2 class="title">Delete the Uplay Version of Siege</h3>
+                <p class="warning"><b>While logged in with your Uplay only account</b></p><p class="text tutorial-text">In Uplay, Navigate to <br><br><b>Rainbow Six Siege > Properties > Local Files</b><br><br>and click "Uninstall"</p>
+            </div>
+            <div class="image-control-container">
+                <div class="preview-image fade-in">
+                    <img src="img/tutorial/uninstall.jpg" />
+                </div>
+                <div class="navigation">
+                    <button id="back" class="buttons back">Back</button>
+                    <button id="next" class="buttons next">Next</button>
+                </div>
+            </div>
+        </div>
+        <div id="3"class="tutorial-container">
+            <div class="text-container fade-in three">
+                <h2 class="title">Select Your Steam Siege Install Folder</h3>
+                <p class="text tutorial-text">Please click the "Select Game Folder" button and navigate to your Siege Steam directory<br><br>For me, it was<br><br>C:/Program Files (x86)/Steam/steamapps/common/
+                    Tom Clancy's Rainbow Six Siege/<br><br><br><br><p id="directory" class="text"></p></p>
+            </div>
+            <div class="image-control-container">
+                <div class="preview-image fade-in">
+                    <img src="img/tutorial/directory.png" />
+                </div>
+                <div class="navigation">
+                    <button id="folder-open" class="buttons pulsate-bck">Select Game Folder</button>
+                    <button id="back" class="buttons back">Back</button>
+                    <button id="next" class="buttons next disabled">Next</button>
+                </div>
+            </div>
+        </div>
+        <div id="4"class="tutorial-container">
+            <div class="text-container fade-in four">
+                <h2 class="title">Locate Installed Game</h3>
+                <p class="text tutorial-text">Back in Uplay, select the "Locate installed game" option underneath the Download button. When asked for you folder, remember your Steam install folder<br><br>You may get a prompt to verify files. Confirm the verification and wait for it to finish. Once that is done, click next.<br><br><br>(You can check your selected path by clicking the back button. Everything up till now has been saved)</p>
+            </div>
+            <div class="image-control-container">
+                <div class="preview-image fade-in">
+                    <img src="img/tutorial/locate.png" />
+                </div>
+                <div class="navigation">
+                    <button id="back" class="buttons back">Back</button>
+                    <button id="next" class="buttons next">Next</button>
+                </div>
+            </div>
+        </div>
+        <div id="5"class="tutorial-container">
+            <div class="text-container fade-in five">
+                <h2 class="title">You're all Setup!</h3>
+                <p class="text tutorial-text">Now you can use this application to the fullest extent. Click "Finish" to complete the setup.</p>
+            </div>
+            <div class="image-control-container">
+                <div class="preview-image fade-in">
+                    <img src="img/tutorial/Rainbow_Six_Siege_28.jpg" />
+                </div>
+                <div class="navigation">
+                    <button id="back" class="buttons back">Back</button>
+                    <button id="finish" class="buttons finish">Finish</button>
+                </div>
+            </div>
+        </div>
+        <div id="uplay-only-div" class="tutorial-container">
+            <div class="text-container fade-in one">
+                <h2 class="title">Uplay Only<br>Select Your Uplay Siege Install Folder</h3>
+                <p class="text tutorial-text">Please click the "Select Game Folder" button and navigate to your Siege Uplay directory<br><br><br><p id="directory-uplay" class="text"></p></p>
+            </div>
+            <div class="image-control-container">
+                <div class="preview-image fade-in">
+                    <img src="img/tutorial/Rainbow_Six_Siege_28.jpg" />
+                </div>
+                <div class="navigation">
+                    <button id="folder-open-uplay" class="buttons pulsate-bck">Select Game Folder</button>
+                    <button id="back-uplay-1" class="buttons">Back</button>
+                    <button id="next-uplay" class="buttons disabled">Next</button>
+                </div>
+            </div>
+        </div>
+        <div id="uplay-finished"class="tutorial-container">
+            <div class="text-container fade-in five">
+                <h2 class="title">You're all Setup!</h3>
+                <p class="text tutorial-text">Now you can use this application to the fullest extent. Click "Finish" to complete the setup.</p>
+            </div>
+            <div class="image-control-container">
+                <div class="preview-image fade-in">
+                    <img src="img/tutorial/Rainbow_Six_Siege_28.jpg" />
+                </div>
+                <div class="navigation">
+                    <button id="back-uplay-2" class="buttons back">Back</button>
+                    <button id="finish" class="buttons finish">Finish</button>
+                </div>
+            </div>
+        </div>
+        <script>
+            require('./js/renderer-tut.js')
+        </script>
+    </body>
+</html>

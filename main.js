@@ -9,6 +9,7 @@ new (require('./util/ipcmain'))(electron, userInfo, settings)
 
 let mainWindow
 let loadWindow
+let tutorialWindow
 
 function createMainWindow () {
   mainWindow = new BrowserWindow({
@@ -46,6 +47,27 @@ function createLoadingWindow () {
   loadWindow.loadFile('./public/load.html')
 }
 
+function createTutorialWindow () {
+  tutorialWindow = new BrowserWindow({
+    minWidth: 1000,
+    minHeight: 560,
+    width: 1000,
+    height: 560,
+    title: 'Siege Account Switcher',
+    autoHideMenuBar: true,
+    webPreferences: {
+      nodeIntegration: true
+    }
+  })
+
+  tutorialWindow.loadFile('./public/tutorial.html')
+
+  tutorialWindow.on('close', () => {
+    if (settings.get().setup === 1) app.relaunch()
+    app.exit()
+  })
+}
+
 function updateStatus (update) {
   loadWindow.webContents.send('update', update)
 }
@@ -59,7 +81,11 @@ async function _init () {
   wait(2000)
   updateStatus('Loading Settings')
   console.log(await settings._loadSettings())
-  if (settings.installDirectory) { cmd.setPath(settings.installDirectory + '\\') }
+  if (settings.installDirectory) {
+    cmd.setPath(settings.installDirectory + '\\')
+  } else {
+    return 1
+  }
   wait(2000)
   console.log(settings.get(settings))
   updateStatus(`Install Path: ${cmd.getPath()}`)
@@ -68,13 +94,18 @@ async function _init () {
   // await settings.set({ setup: 0, installDirectory: "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Tom Clancy's Rainbow Six Siege" })
   console.log(process.versions.electron)
   // console.log(settings.get(settings))
+  return 0
 }
 
 app.on('ready', async () => {
   createLoadingWindow()
-  await _init()
+  const status = await _init()
   loadWindow.hide()
-  createMainWindow()
+  if (status === 0) {
+    createMainWindow()
+  } else {
+    createTutorialWindow()
+  }
 })
 
 // Debugging

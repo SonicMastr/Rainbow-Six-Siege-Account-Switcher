@@ -1,0 +1,86 @@
+  .buttons {
+    background-color: #78B4EA;
+    font-size: 2vw;  
+    padding: .2em .5em;
+    outline: none;
+    border-radius: .15em;
+    border: none;
+    margin-left: 5%;
+  }
+
+  .title {
+      color:  #78B4EA
+  }
+
+  .warning {
+      color: rgb(231, 59, 102)
+  }
+
+  .disabled {
+    display: none;
+  }
+
+  .tutorial-container {
+      display: none;
+      align-content: center;
+      justify-content: space-evenly;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+  }
+
+  .text-container, .image-control-container {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      width: 50%;
+  }
+
+  .text-container {
+      margin-left:3%
+  }
+
+  .one {
+    padding-top: 5%;
+  }
+
+  .two {
+      padding-top: 13%;
+  }
+
+  .three {
+      padding-top: 11%;
+  }
+
+  .four {
+      padding-top: 12%;
+  }
+
+  .five {
+      padding-top: 14%;
+  }
+
+  .image-control-container {
+      justify-content: space-evenly;
+      justify-content: flex-end;
+      padding-bottom: 5%;
+  }
+
+  .navigation {
+      display: flex;
+      justify-content: flex-end;
+      width: 90%;
+      margin-top: 20%;
+      margin-left: 5%;
+      margin-right: 5%;
+  }
+
+  img {
+      margin-left: 5%;
+      margin-right: 5%;
+      margin-bottom: 5%;
+      width: 90%;
+  }
+
+  .show{display:flex}
+

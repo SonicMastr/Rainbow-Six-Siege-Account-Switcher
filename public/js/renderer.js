@@ -8,6 +8,7 @@ const userinfo = document.getElementById('user-info')
 window.addEventListener('load', () => {
   loadUsers()
   document.getElementById('uplay-button').addEventListener('click', toggleDropdown)
+  document.getElementById('steam-button').addEventListener('click', setSteam)
 })
 
 function toggleDropdown () {
@@ -15,7 +16,11 @@ function toggleDropdown () {
 }
 
 function loadUsers () {
+  const settings = ipc.sendSync('get-settings')
   const users = ipc.sendSync('get-users')
+  if (settings.steam) {
+    document.getElementById('steam-button').classList.remove('disabled')
+  }
   for (let i = 0; i < users.length; i++) {
     const entry = document.createElement('a')
     entry.setAttribute('href', '#')
@@ -43,6 +48,10 @@ function renderUserInfo (event) {
   level.innerHTML = 'Level ' + userLevel
   name.innerHTML = userName
   userinfo.classList.add('fade-in-bottom')
+}
+
+function setSteam () {
+
 }
 
 window.onclick = function (event) {
