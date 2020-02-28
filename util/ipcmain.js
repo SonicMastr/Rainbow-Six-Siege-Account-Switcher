@@ -2,11 +2,12 @@ const fs = require('fs')
 const util = require('util')
 
 class IPCMain {
-  constructor (electron, userInfo, settings) {
+  constructor (electron, userInfo, settings, cmd) {
     this.ipc = electron.ipcMain
     this.dialog = electron.dialog
     this.settings = settings
     this.setup = this.settings.setup
+    this.cmd = cmd
     this.userInfo = userInfo
     this.directory = ''
     this.steam = false
@@ -88,6 +89,41 @@ class IPCMain {
       }
       console.log('Failed to save Install Directory')
       event.returnValue = 1
+    })
+
+    this.ipc.on('switch-uplay', async (event, id) => {
+      const currentEmail = await this.userInfo.getCurrentlyLoggedIn()
+      const email = await this.userInfo.checkEmail(id)
+      console.log(id + email)
+      if (!currentEmail) {
+        console.log('gay')
+        event.returnValue = [2, null]
+        return
+      }
+      if (!email) {
+        console.log('yay')
+        event.returnValue = [1, currentEmail]
+        return
+      }
+      event.returnValue = [0, currentEmail]
+    })
+
+    this.ipc.on('save-uplay', async (event, id, email) => {
+      const result = await this.userInfo.saveUserSettingsYaml(id, email)
+      if (result === 0) {
+        if (id && email) {
+          console.log(`Linked ${email} to Account id ${id}`)
+          event.returnValue = `Linked ${email} to Account id ${id}`
+          return
+        }
+        console.log(`Updated Account id ${id}`)
+        event.returnValue = `Updated Account id ${id}`
+      }
+      if (result === 2) {
+        event.returnValue = 'Could not create user directory'
+      } else {
+        event.returnValue = 'Could not copy data'
+      }
     })
   }
 }

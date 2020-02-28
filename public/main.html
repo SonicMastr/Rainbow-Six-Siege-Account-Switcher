@@ -6,7 +6,7 @@
         <link href="./css/animations.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
-        <div class="outer-button-div">
+        <div id="main-div" class="outer-button-div">
             <div class="information-container">
                 <div class="top-information fade-in-bottom">
                     <h1 class="text">Siege Account Switcher<br><h4 class="text">By SonicMastr</h4></h1>
@@ -31,6 +31,21 @@
                     <h5 id="userName" class="text user-info-text"></h5>
                     <h5 id="userLevel" class="text user-info-text"></h5>
                 </div>
+                <div class="switch-div">
+                    <button id="switch-button" class="buttons text switch hide"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="prompt-screen" class="prompt-info fade hide">
+            <div class="fade-in-bottom prompt">
+                <div class="loading-imgs">
+                    <img src="./img/Siege_Logo_Blue.png" class="loading-img logo">
+                    <img src="./img/Semi_Circle.png" class="loading-img loading rotate" />
+                </div>
+                <h6 id="status" class="text status-main">Switching Accounts</h6>
+                <button id="continue" class="buttons text continue hide">Continue</button>
+                <button id="wrong" class="buttons text wrong hide">Wrong Account</button>
             </div>
         </div>
         <script>

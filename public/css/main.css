@@ -50,13 +50,22 @@ body {
     width: 100%;
     height: 80%;
   }
+
+  .switch-div {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    margin-top: 10%;
+  }
   
   .text {
     color: #f3f7ff
   }
   
-.outer-button-div {
-  position: relative;
+  .outer-button-div {
+  position: absolute;
     align-items: center;
     height: 100%;
     width: 100%;
@@ -87,6 +96,74 @@ body {
     outline: none;
     border-radius: .15em;
     border: none;
+  }
+
+  .prompt-info {
+    background-color: rgba(30, 29, 32, 0.466);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .prompt {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 80%;
+    width: 50%;
+  }
+  .status-main {
+    margin: 0 auto;
+    height: 30%;
+    font-size: 2vw;
+  }
+
+  .continue {
+    margin-top: 15%;
+  }
+
+  .wrong {
+    margin-top: 4%;
+    background-color: #B03c59;
+    font-size: 1.5vw;
+  }
+
+  .loading-imgs {
+    position: relative;
+    padding-top: 10%;
+    height: 25%;
+    width: 20%;
+  }
+
+.loading-img {
+    position: absolute;
+    display: block;
+}
+
+.logo {
+    height:70%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+.loading {
+    height: 100%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+  .switch {
+    font-size: 2vw;
   }
 
   /* Dropdown button on hover & focus */
@@ -131,5 +208,7 @@ body {
   
   /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
   .show {display:block;}
+
+  .hide {display:none;}
 
   .disabled, .disabled:hover, .disabled:focus {background-color: grey; cursor: default;}

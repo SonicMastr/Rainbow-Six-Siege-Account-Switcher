@@ -5,7 +5,7 @@ const userInfo = new (require('./util/userInfo'))(storage)
 const settings = new (require('./util/settings'))(storage)
 const cmd = new (require('./util/cmd'))()
 // Initiallize IPCMain
-new (require('./util/ipcmain'))(electron, userInfo, settings)
+new (require('./util/ipcmain'))(electron, userInfo, settings, cmd)
 
 let mainWindow
 let loadWindow
@@ -18,11 +18,17 @@ function createMainWindow () {
     width: 1000,
     height: 560,
     title: 'Siege Account Switcher',
+    useContentSize: true,
+    resizable: false,
     autoHideMenuBar: true,
     webPreferences: {
       nodeIntegration: true
     }
   })
+
+  // mainWindow.setMenu(null)
+
+  const tmpSize = [0, 0]
 
   mainWindow.loadFile('./public/main.html')
 
