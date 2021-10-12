@@ -4,7 +4,7 @@
   "description": "A Simple Account Switcher for Tom Clancy's Rainbow Six Siege",
   "main": "main.js",
   "dependencies": {
-    "electron": "^8.0.2",
+    "electron": "^11.5.0",
     "electron-builder": "^22.3.2",
     "electron-json-storage": "^4.1.8",
     "electron-updater": "^4.2.2",
